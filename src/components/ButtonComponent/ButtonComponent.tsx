@@ -5,11 +5,11 @@ import { ISelectProps } from '../Interface/interfaces';
 import './ButtonComponent.css'
 
 const ButtonComponent: React.FC<ISelectProps> = (props: ISelectProps) => {
-  const poHuy = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const getNumberMonth = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.currentTarget;
     const index = MONTH_NAMES.findIndex((el) => el === name);
 
-    props.clickMonth(index);
+    props.clickMonth(index+1);
     console.log(index);
   };
 
@@ -17,7 +17,7 @@ const ButtonComponent: React.FC<ISelectProps> = (props: ISelectProps) => {
     <div className='wrapper'>
       {MONTH_NAMES.map((el) => {
         return (
-          <Button name={el} key={el} variant="contained" onClick={poHuy}>
+          <Button name={el} key={el} variant="contained" onClick={getNumberMonth}>
             {el}
           </Button>
         );

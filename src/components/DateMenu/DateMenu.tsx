@@ -23,14 +23,18 @@ const DateMenu: React.FC<IGerProps> = ({ clickFn }: IGerProps) => {
   };
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <input
-      className='input'
+        className="input"
+        min="1"
+        max="31"
         value={startData}
         name="start"
         placeholder="Введите начальую дату"
         onChange={handelInput}></input>
       <input
+        min="1"
+        max="31"
         value={endData}
         name="end"
         placeholder="Введите конечуню дату"
